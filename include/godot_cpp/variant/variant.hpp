@@ -38,6 +38,7 @@
 
 #include <gdextension_interface.h>
 
+#include <string>
 #include <array>
 
 namespace godot {
@@ -263,6 +264,8 @@ public:
 	operator PackedVector3Array() const;
 	operator PackedColorArray() const;
 	operator PackedVector4Array() const;
+	operator std::string() const;
+
 
 	Variant &operator=(const Variant &other);
 	Variant &operator=(Variant &&other);

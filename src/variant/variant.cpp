@@ -28,6 +28,8 @@
 /* SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                 */
 /**************************************************************************/
 
+
+
 #include <godot_cpp/variant/variant.hpp>
 
 #include <godot_cpp/godot.hpp>
@@ -512,6 +514,11 @@ Variant::operator PackedColorArray() const {
 
 Variant::operator PackedVector4Array() const {
 	return PackedVector4Array(this);
+}
+
+Variant::operator std::string() const {
+	std::string ret = ((godot::String) *this).ascii().get_data();
+	return ret;
 }
 
 Variant &Variant::operator=(const Variant &other) {
