@@ -105,6 +105,15 @@ struct _NO_DISCARD_ Vector3 {
 
 	_FORCE_INLINE_ void zero();
 
+	Vector3 to_xz() const { return Vector3(x, 0.0f, z); }
+	Vector3 to_y() const { return Vector3(0.0f, y, 0.0f); }
+
+	void horz() { y = 0; }
+	void vert() {
+		x = 0;
+		z = 0;
+	}
+
 	void snap(const Vector3 p_val);
 	void snapf(real_t p_val);
 	Vector3 snapped(const Vector3 p_val) const;
